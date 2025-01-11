@@ -36,23 +36,10 @@ spec:
     - path:
         type: PathPrefix
         value: /
-      headers:
-        - type: Exact
-          name: "x-version"
-          value: "stable"
     backendRefs:
     - name: ai-service-stable
       kind: Service
       port: 5001
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-      headers:
-        - type: Exact
-          name: "x-version"
-          value: "canary"
-    backendRefs:
     - name: ai-service-canary
       kind: Service
       port: 5001
